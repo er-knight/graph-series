@@ -10,13 +10,11 @@ using namespace std;
  * first line contains 2 space seperated integers n (number of nodes) and m (number of edges).
  * each of next m lines contains u (starting node of edge) and v (ending node of edge).
  * 
- * Time Complexity  : O(n+2×m) ≈ O(n+m) 
+ * Time Complexity  : O(n)
  * 
- * Space Complexity : O(n+2×m) + O(n) ≈ O(n+m) 
- *                       ↑        ↑
- *                     stack   visited  
- *          
- * Note : 2×m is number of edges 
+ * Space Complexity : O(n)  +  O(n)  ≈ O(n) 
+ *                     ↑        ↑
+ *                   stack   visited  
  * 
  * Reference : https://youtu.be/Y9NFqI6Pzd4
  **/
