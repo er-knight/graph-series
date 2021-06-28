@@ -1,0 +1,102 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+/**
+ * Cycle Detection in Undirected Graph using BFS
+ * 
+ * Input Format :
+ * first line contains 2 space seperated integers n (number of nodes) and m (number of edges).
+ * each of next m lines contains u (starting node of edge) and v (ending node of edge).
+ * 
+ * Time Complexity  : O(n+2×m) ≈ O(n+m) 
+ * 
+ * Space Complexity : O(n+2×m)  +  O(n)   +   O(n) ≈ O(n+m) 
+ *                       ↑          ↑          ↑
+ *                     queue  dfs_traversal visited  
+ *          
+ * Note : 2×m is number of edges 
+ * 
+ * Reference : https://youtu.be/A8ko93TyOns
+ **/ 
+
+bool is_cycle(int n, vector<int> adj_list[]) {
+    vector<int> visited(n, 0); 
+    for (int i=0; i < n; ++i) {
+        if (!visited[i]) {
+            queue<pair<int, int>> q;
+            q.push({i, -1});
+            visited[i] = 1;
+            while(!q.empty()) {
+                int node = q.front().first;
+                int prev = q.front().second;
+                q.pop();
+                for (int& k : adj_list[node]) {
+                    if (!visited[k]) {
+                        q.push({k, node});
+                        visited[k] = 1;
+                    }
+                    else if (prev != k) {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<int> adj_list[n];
+
+    for (int i=0; i < m; ++i) {
+        int u, v;
+        cin >> u >> v;
+        adj_list[u - 1].emplace_back(v - 1);
+        adj_list[v - 1].emplace_back(u - 1);
+    }
+
+    for (int i=0; i < n; ++i) {
+        cout << i + 1 << " -> ";
+        for (int& j : adj_list[i]) {
+            cout << j + 1 << " ";
+        }
+        cout << "\n";
+    }
+
+    if (is_cycle(n, adj_list)) {
+        cout << "Cycle Detected\n";
+    }
+    else {
+        cout << "No Cycle Detected\n";
+    }
+}
+
+/**
+ * Input :
+ * 9 8
+ * 1 2
+ * 2 4
+ * 3 5
+ * 5 6
+ * 5 9
+ * 6 7
+ * 7 8
+ * 8 9
+ * 
+ * Output :
+ * 1 -> 2 
+ * 2 -> 1 4 
+ * 3 -> 5 
+ * 4 -> 2 
+ * 5 -> 3 6 9 
+ * 6 -> 5 7 
+ * 7 -> 6 8 
+ * 8 -> 7 9 
+ * 9 -> 5 8 
+ * Cycle Detected
+ **/ 
