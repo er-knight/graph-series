@@ -12,9 +12,9 @@ using namespace std;
  * 
  * Time Complexity  : O(n+2×m) ≈ O(n+m) 
  * 
- * Space Complexity : O(n+2×m)  +  O(n)   +   O(n) ≈ O(n+m) 
- *                       ↑          ↑          ↑
- *                     queue  dfs_traversal visited  
+ * Space Complexity : O(n+2×m) +  O(n) ≈ O(n+m) 
+ *                       ↑         ↑
+ *                     queue    visited  
  *          
  * Note : 2×m is number of edges 
  * 
