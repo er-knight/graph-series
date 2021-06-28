@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <stack>
 using namespace std;
 
 /**
- * Cycle Detection in Undirected Graph using BFS
+ * Cycle Detection in Undirected Graph using DFS
  * 
  * Input Format :
  * first line contains 2 space seperated integers n (number of nodes) and m (number of edges).
@@ -14,27 +14,27 @@ using namespace std;
  * 
  * Space Complexity : O(n+2×m) + O(n) ≈ O(n+m) 
  *                       ↑        ↑
- *                     queue   visited  
+ *                     stack   visited  
  *          
  * Note : 2×m is number of edges 
  * 
- * Reference : https://youtu.be/A8ko93TyOns
- **/ 
+ * Reference : https://youtu.be/Y9NFqI6Pzd4
+ **/
 
 bool is_cycle(int n, vector<int> adj_list[]) {
     vector<int> visited(n, 0); 
     for (int i=0; i < n; ++i) {
         if (!visited[i]) {
-            queue<pair<int, int>> q;
-            q.push({i, -1});
+            stack<pair<int, int>> s;
+            s.push({i, -1});
             visited[i] = 1;
-            while(!q.empty()) {
-                int node = q.front().first;
-                int prev = q.front().second;
-                q.pop();
+            while(!s.empty()) {
+                int node = s.top().first;
+                int prev = s.top().second;
+                s.pop();
                 for (int& k : adj_list[node]) {
                     if (!visited[k]) {
-                        q.push({k, node});
+                        s.push({k, node});
                         visited[k] = 1;
                     }
                     else if (k != prev) {
@@ -78,25 +78,23 @@ int main() {
 
 /**
  * Input :
- * 9 8
- * 1 2
- * 2 4
- * 3 5
+ * 8 7
+ * 1 3
+ * 3 4
+ * 2 5
  * 5 6
- * 5 9
+ * 5 8
  * 6 7
  * 7 8
- * 8 9
  * 
  * Output :
- * 1 -> 2 
- * 2 -> 1 4 
- * 3 -> 5 
- * 4 -> 2 
- * 5 -> 3 6 9 
+ * 1 -> 3 
+ * 2 -> 5 
+ * 3 -> 1 4 
+ * 4 -> 3 
+ * 5 -> 2 6 8 
  * 6 -> 5 7 
  * 7 -> 6 8 
- * 8 -> 7 9 
- * 9 -> 5 8 
+ * 8 -> 5 7 
  * Cycle Detected
  **/ 
