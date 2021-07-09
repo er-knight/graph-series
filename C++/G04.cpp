@@ -24,7 +24,7 @@ using namespace std;
 vector<int> dfs(int n, vector<int> adj_list[]) {
     vector<int> dfs_traversal;
     vector<int> visited(n, 0); 
-    for (int i=0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         if (!visited[i]) {
             stack<int> s;
             s.push(i);
@@ -51,14 +51,14 @@ int main() {
 
     vector<int> adj_list[n];
 
-    for (int i=0; i < m; ++i) {
+    for (int i = 0; i < m; ++i) {
         int u, v;
         cin >> u >> v;
         adj_list[u - 1].emplace_back(v - 1);
         adj_list[v - 1].emplace_back(u - 1);
     }
 
-    for (int i=0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         cout << i + 1 << " -> ";
         for (int& j : adj_list[i]) {
             cout << j + 1 << " ";

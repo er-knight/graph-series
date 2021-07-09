@@ -4,45 +4,51 @@
 using namespace std;
 
 /**
- * Cycle Detection in Undirected Graph using BFS
+ * Graph Coloring using BFS (Bipartite Graph) 
+ * 
+ * Bipartite Graph : 
+ * ● graph whose vertices can be color using 2 colors,
+ *   such that no two adjacent vertices have same color.
+ * ● graph that does not contain any odd-length cycles.
  * 
  * Input Format :
  * first line contains 2 space seperated integers n (number of nodes) and m (number of edges).
  * each of next m lines contains u (starting node of edge) and v (ending node of edge).
  * 
+ * Note : color of vertices can be 0 (not colored), 1 (first color) and -1 (second color).
+ * 
  * Time Complexity  : O(n)
  * 
  * Space Complexity : O(n)  +  O(n)  ≈ O(n) 
  *                     ↑        ↑
- *                   queue   visited  
+ *                   queue    color  
  * 
- * Reference : https://youtu.be/A8ko93TyOns
- **/ 
+ * Reference : https://youtu.be/nbgaEu-pvkU
+ */ 
 
-bool is_cycle(int n, vector<int> adj_list[]) {
-    vector<int> visited(n, 0); 
+bool is_bipartite(int n, vector<int> adj_list[]) {
+    vector<int> color(n, 0); 
     for (int i = 0; i < n; ++i) {
-        if (!visited[i]) {
-            queue<pair<int, int>> q;
-            q.push({i, -1});
-            visited[i] = 1;
+        if (!color[i]) {
+            queue<int> q;
+            q.push(i);
+            color[i] = 1;
             while(!q.empty()) {
-                int node = q.front().first;
-                int prev = q.front().second;
+                int node = q.front();                
                 q.pop();
                 for (int& k : adj_list[node]) {
-                    if (!visited[k]) {
-                        q.push({k, node});
-                        visited[k] = 1;
+                    if (!color[k]) {
+                        q.push(k);
+                        color[k] = -color[node];
                     }
-                    else if (k != prev) {
-                        return true;
+                    else if (color[k] == color[node]) {
+                        return false;
                     }
                 }
             }
         }
     }
-    return false;
+    return true;
 }
 
 int main() {
@@ -66,35 +72,34 @@ int main() {
         cout << "\n";
     }
 
-    if (is_cycle(n, adj_list)) {
-        cout << "Cycle Detected\n";
+    if (is_bipartite(n, adj_list)) {
+        cout << "Bipartite Graph\n";
     }
     else {
-        cout << "No Cycle Detected\n";
+        cout << "Not Bipartite Graph\n";
     }
 }
 
 /**
  * Input :
- * 9 8
+ * 8 8
  * 1 2
- * 2 4
- * 3 5
+ * 2 3
+ * 2 7
+ * 3 4
+ * 4 5
  * 5 6
- * 5 9
+ * 5 8
  * 6 7
- * 7 8
- * 8 9
  * 
  * Output :
  * 1 -> 2 
- * 2 -> 1 4 
- * 3 -> 5 
- * 4 -> 2 
- * 5 -> 3 6 9 
+ * 2 -> 1 3 7 
+ * 3 -> 2 4 
+ * 4 -> 3 5 
+ * 5 -> 4 6 8 
  * 6 -> 5 7 
- * 7 -> 6 8 
- * 8 -> 7 9 
- * 9 -> 5 8 
- * Cycle Detected
+ * 7 -> 2 6 
+ * 8 -> 5 
+ * Bipartite Graph
  **/ 

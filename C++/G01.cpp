@@ -19,14 +19,14 @@ int main() {
 
     int adj_matrix[n][n];
 
-    for (int i=0; i < m; ++i) {
+    for (int i = 0; i < m; ++i) {
         int u, v;
         cin >> u >> v;
         adj_matrix[u - 1][v - 1] = 1;
         adj_matrix[v - 1][u - 1] = 1;
     }
 
-    for (int i=0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         cout << i + 1 << " -> ";
         for (int j=0; j < n; ++j) {
             if (adj_matrix[i][j] == 1) {

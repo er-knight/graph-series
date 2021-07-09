@@ -6,5 +6,6 @@
 - Adjacency List Representation of Undirected Graph   [`G02.cpp`](C++/G02.cpp) [`G02.py`](Python/G02.py)
 - Breadth First Search (BFS) on Undirected Graph      [`G03.cpp`](C++/G03.cpp) [`G03.py`](Python/G03.py)
 - Depth First Search (DFS) on Undirected Graph        [`G04.cpp`](C++/G04.cpp) [`G04.py`](Python/G04.py)
-- Cycle Detection in Undirected Graph using BFS       [`G05.cpp`](C++/G05.cpp)
-- Cycle Detection in Undirected Graph using DFS       [`G06.cpp`](C++/G06.cpp)
+- Cycle Detection in Undirected Graph using BFS       [`G05.cpp`](C++/G05.cpp) [`G05.py`](Python/G05.py)
+- Cycle Detection in Undirected Graph using DFS       [`G06.cpp`](C++/G06.cpp) [`G06.py`](Python/G06.py)
+- Graph Coloring using BFS (Bipartite Graph)          [`G07.cpp`](C++/G07.cpp) [`G07.py`](Python/G07.py)
