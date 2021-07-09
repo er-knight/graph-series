@@ -13,7 +13,7 @@ from typing import List
 #                     ↑          ↑          ↑
 #                   stack  dfs_traversal visited 
 # 
-# Reference : https://youtu.be/UeE67iCK2lQ
+# Reference : https://youtu.be/uDWljP2PGmU
 
 def dfs(n: int, adj_list: List[int]) -> List[int]:
     dfs_traversal = []

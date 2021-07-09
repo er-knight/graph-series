@@ -13,7 +13,7 @@ from typing import List
 #                     ↑        ↑
 #                   stack   visited  
 # 
-# Reference : https://youtu.be/A8ko93TyOns
+# Reference : https://youtu.be/Y9NFqI6Pzd4
 
 def is_cycle(n: int, adj_list: List[int]) -> List[int]:
     visited = [False for i in range(n)] 
