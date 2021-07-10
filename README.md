@@ -9,5 +9,6 @@
 - [`G05.cpp`](C++/G05.cpp) [`G05.py`](Python/G05.py) [`Cycle Detection in Undirected Graph using BFS`](https://youtu.be/A8ko93TyOns)
 - [`G06.cpp`](C++/G06.cpp) [`G06.py`](Python/G06.py) [`Cycle Detection in Undirected Graph using DFS`](https://youtu.be/Y9NFqI6Pzd4)
 - [`G07.cpp`](C++/G07.cpp) [`G07.py`](Python/G07.py) [`Graph Coloring using BFS (Bipartite Graph)`](https://youtu.be/nbgaEu-pvkU)
+- [`G08.cpp`](C++/G08.cpp) [`G08.py`](Python/G08.py) [`Graph Coloring using DFS (Bipartite Graph)`](https://youtu.be/uC884ske2uQ)
 
 <!-- todo : add images for each topic -->
