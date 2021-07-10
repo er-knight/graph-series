@@ -4,7 +4,7 @@
 
 - [`G01.cpp`](C++/G01.cpp) [`G01.py`](Python/G01.py) [`Adjacency Matrix Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y) 
 
-<p align="center"> <img src="Images/G01.png" width="200"> </p>
+<p align="center"> <img src="Images/G01.png" width="250"> </p>
 
 - [`G02.cpp`](C++/G02.cpp) [`G02.py`](Python/G02.py) [`Adjacency List Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y)
 - [`G03.cpp`](C++/G03.cpp) [`G03.py`](Python/G03.py) [`Breadth First Search (BFS) on Undirected Graph`](https://youtu.be/UeE67iCK2lQ)
