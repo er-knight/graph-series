@@ -3,6 +3,9 @@
 </h2>
 
 - [`G01.cpp`](C++/G01.cpp) [`G01.py`](Python/G01.py) [`Adjacency Matrix Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y) 
+
+<p align="center"> <img src="Images/G01.png" width="200"> </p>
+
 - [`G02.cpp`](C++/G02.cpp) [`G02.py`](Python/G02.py) [`Adjacency List Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y)
 - [`G03.cpp`](C++/G03.cpp) [`G03.py`](Python/G03.py) [`Breadth First Search (BFS) on Undirected Graph`](https://youtu.be/UeE67iCK2lQ)
 - [`G04.cpp`](C++/G04.cpp) [`G04.py`](Python/G04.py) [`Depth First Search (DFS) on Undirected Graph`](https://youtu.be/uDWljP2PGmU)
@@ -10,5 +13,3 @@
 - [`G06.cpp`](C++/G06.cpp) [`G06.py`](Python/G06.py) [`Cycle Detection in Undirected Graph using DFS`](https://youtu.be/Y9NFqI6Pzd4)
 - [`G07.cpp`](C++/G07.cpp) [`G07.py`](Python/G07.py) [`Graph Coloring using BFS (Bipartite Graph)`](https://youtu.be/nbgaEu-pvkU)
 - [`G08.cpp`](C++/G08.cpp) [`G08.py`](Python/G08.py) [`Graph Coloring using DFS (Bipartite Graph)`](https://youtu.be/uC884ske2uQ)
-
-<!-- todo : add images for each topic -->
