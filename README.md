@@ -7,6 +7,9 @@
 <p align="center"> <img src="Images/G01.png" width="250"> </p>
 
 - [`G02.cpp`](C++/G02.cpp) [`G02.py`](Python/G02.py) [`Adjacency List Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y)
+
+<p align="center"> <img src="Images/G02.png" width="250"> </p>
+
 - [`G03.cpp`](C++/G03.cpp) [`G03.py`](Python/G03.py) [`Breadth First Search (BFS) on Undirected Graph`](https://youtu.be/UeE67iCK2lQ)
 - [`G04.cpp`](C++/G04.cpp) [`G04.py`](Python/G04.py) [`Depth First Search (DFS) on Undirected Graph`](https://youtu.be/uDWljP2PGmU)
 - [`G05.cpp`](C++/G05.cpp) [`G05.py`](Python/G05.py) [`Cycle Detection in Undirected Graph using BFS`](https://youtu.be/A8ko93TyOns)
