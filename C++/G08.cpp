@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <stack>
 using namespace std;
 
 /**
- * Graph Coloring using BFS (Bipartite Graph) 
+ * Graph Coloring using DFS (Bipartite Graph) 
  * 
  * Bipartite Graph : 
  * ● graph whose vertices can be color using 2 colors,
@@ -21,24 +21,24 @@ using namespace std;
  * 
  * Space Complexity : O(n)  +  O(n)  ≈ O(n) 
  *                     ↑        ↑
- *                   queue    color  
+ *                   stack    color  
  * 
- * Reference : https://youtu.be/nbgaEu-pvkU
+ * Reference : https://youtu.be/uC884ske2uQ
  **/ 
 
 bool is_bipartite(int n, vector<int> adj_list[]) {
-    vector<int> color(n, 0); 
+    vector<int> color(n, 0);
     for (int i = 0; i < n; ++i) {
         if (!color[i]) {
-            queue<int> q;
-            q.push(i);
+            stack<int> s;
+            s.push(i);
             color[i] = 1;
-            while(!q.empty()) {
-                int node = q.front();                
-                q.pop();
+            while(!s.empty()) {
+                int node = s.top();
+                s.pop();
                 for (int& k : adj_list[node]) {
                     if (!color[k]) {
-                        q.push(k);
+                        s.push(k);
                         color[k] = -color[node];
                     }
                     else if (color[k] == color[node]) {
