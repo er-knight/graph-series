@@ -10,5 +10,5 @@
 
 <p align="center"> 
     <code>G05.cpp</code> <code>G05.py</code> <code>G06.cpp</code> <code>G06.py</code> <br>
-    <img src="Images/Graph02.png" width="400">
+    <img src="Images/Graph03.png" width="400">
 </p>
