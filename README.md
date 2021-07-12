@@ -2,17 +2,15 @@
     <a href="https://youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw"> Striver's Graph Series </a>
 </h2>
 
+<b>
+
 - [`G01.cpp`](C++/G01.cpp) [`G01.py`](Python/G01.py) [`Adjacency Matrix Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y) 
-
-<img src="Images/G01.png" width="250">
-
 - [`G02.cpp`](C++/G02.cpp) [`G02.py`](Python/G02.py) [`Adjacency List Representation of Undirected Graph`](https://youtu.be/bTtm2ky7I3Y)
-
-<img src="Images/G02.png" width="250">
-
 - [`G03.cpp`](C++/G03.cpp) [`G03.py`](Python/G03.py) [`Breadth First Search (BFS) on Undirected Graph`](https://youtu.be/UeE67iCK2lQ)
 - [`G04.cpp`](C++/G04.cpp) [`G04.py`](Python/G04.py) [`Depth First Search (DFS) on Undirected Graph`](https://youtu.be/uDWljP2PGmU)
 - [`G05.cpp`](C++/G05.cpp) [`G05.py`](Python/G05.py) [`Cycle Detection in Undirected Graph using BFS`](https://youtu.be/A8ko93TyOns)
 - [`G06.cpp`](C++/G06.cpp) [`G06.py`](Python/G06.py) [`Cycle Detection in Undirected Graph using DFS`](https://youtu.be/Y9NFqI6Pzd4)
 - [`G07.cpp`](C++/G07.cpp) [`G07.py`](Python/G07.py) [`Graph Coloring using BFS (Bipartite Graph)`](https://youtu.be/nbgaEu-pvkU)
 - [`G08.cpp`](C++/G08.cpp) [`G08.py`](Python/G08.py) [`Graph Coloring using DFS (Bipartite Graph)`](https://youtu.be/uC884ske2uQ)
+- [`G09.cpp`](C++/G09.cpp) [`G09.py`](Python/G09.py) [`Cycle Detection in Directed Graph using DFS`](https://youtu.be/uzVUw90ZFIg)
+</b>
