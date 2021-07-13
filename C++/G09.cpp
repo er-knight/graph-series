@@ -12,30 +12,38 @@ using namespace std;
  * 
  * Time Complexity  : O(n)
  * 
- * Space Complexity : O(n)  +  O(n)  ≈ O(n) 
- *                     ↑        ↑
- *                   stack   visited  
+ * Space Complexity : O(n)  +  O(n)   +   O(n)   ≈ O(n) 
+ *                     ↑        ↑          ↑
+ *                   stack   visited  dfs_visited
  * 
  * Reference : https://youtu.be/uzVUw90ZFIg
  **/
 
 bool is_cycle(int n, vector<int> adj_list[]) {
-    vector<int> visited(n, 0); 
+    vector<int> visited(n, 0), dfs_visited(n, 0); 
+
     for (int i = 0; i < n; ++i) {
         if (!visited[i]) {
-            stack<pair<int, int>> s;
-            s.push({i, -1});
-            visited[i] = 1;
+            stack<int> s;
+            s.push(i);
+
             while(!s.empty()) {
-                int node = s.top().first;
-                int prev = s.top().second;
-                s.pop();
+                int node = s.top();
+
+                if (!visited[node]) {
+                    visited[node] = 1;
+                    dfs_visited[node] = 1;
+                }
+                else {
+                    dfs_visited[node] = 0;
+                    s.pop();
+                }
+
                 for (int& k : adj_list[node]) {
                     if (!visited[k]) {
-                        s.push({k, node});
-                        visited[k] = 1;
+                        s.push(k);
                     }
-                    else if (k != prev) {
+                    else if (dfs_visited[k]) {
                         return true;
                     }
                 }
@@ -75,22 +83,21 @@ int main() {
 
 /**
  * Input :
- * 7 7
- * 2 3
- * 3 1
- * 3 4
- * 4 5
- * 5 2
- * 5 7
- * 6 5
+ * 6 7
+ * 1 2
+ * 1 3
+ * 1 4
+ * 2 5
+ * 3 6
+ * 4 6
+ * 5 1
  * 
  * Output :
- * 1 -> 
- * 2 -> 3 
- * 3 -> 1 4 
- * 4 -> 5 
- * 5 -> 2 7 
- * 6 -> 5 
- * 7 -> 
+ * 1 -> 2 3 4
+ * 2 -> 5 
+ * 3 -> 6 
+ * 4 -> 6 
+ * 5 -> 1 
+ * 6 ->  
  * Cycle Detected
  **/ 

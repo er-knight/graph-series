@@ -9,26 +9,35 @@ from typing import List
 # 
 # Time Complexity  : O(n)
 # 
-# Space Complexity : O(n)  +  O(n)  ≈ O(n) 
-#                     ↑        ↑
-#                   stack   visited  
+# Space Complexity : O(n)  +  O(n)   +   O(n)   ≈ O(n) 
+#                     ↑        ↑          ↑
+#                   stack   visited  dfs_visited  
 # 
 # Reference : https://youtu.be/uzVUw90ZFIg
 
 def is_cycle(n: int, adj_list: List[int]) -> List[int]:
-    visited = [False for i in range(n)] 
+    visited     = [False for i in range(n)]
+    dfs_visited = [False for i in range(n)]
+
     for i in range(n):
         if not visited[i]:
-            q = stack()
-            q.append((i, -1)) # push
-            visited[i] = True
-            while q: # q not empty
-                node, prev = q.pop() # top
+            s = stack()
+            s.append(i) # push
+
+            while s: # stack is not empty
+                node = s[-1] # top
+
+                if not visited[node]:
+                    visited[node] = True 
+                    dfs_visited[node] = True
+                else:
+                    dfs_visited[node] = False
+                    _ = s.pop() # pop
+
                 for k in adj_list[node]:
                     if not visited[k]:
-                        q.append((k, node))
-                        visited[k] = True
-                    elif k != prev:
+                        s.append(k)
+                    elif dfs_visited[k]:
                         return True
 
     return False
@@ -54,21 +63,20 @@ if __name__ == "__main__":
         print("No Cycle Detected")
 
 # Input :
-# 7 7
-# 2 3
-# 3 1
-# 3 4
-# 4 5
-# 5 2
-# 5 7
-# 6 5
+# 6 7
+# 1 2
+# 1 3
+# 1 4
+# 2 5
+# 3 6
+# 4 6
+# 5 1
 # 
 # Output :
-# 1 -> 
-# 2 -> 3 
-# 3 -> 1 4 
-# 4 -> 5 
-# 5 -> 2 7 
-# 6 -> 5 
-# 7 -> 
+# 1 -> 2 3 4
+# 2 -> 5 
+# 3 -> 6 
+# 4 -> 6 
+# 5 -> 1 
+# 6 ->  
 # Cycle Detected
