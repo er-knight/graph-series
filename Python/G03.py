@@ -64,6 +64,9 @@ if __name__ == "__main__":
 # 4 6
 # 5 7
 # 
+# Graph :
+# https://github.com/er-knight/graph-series/blob/main/Graphs/Graph02.png
+# 
 # Output :
 # 1 -> 2 
 # 2 -> 1 3 7 

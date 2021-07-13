@@ -92,6 +92,9 @@ int main() {
  * 5 8
  * 6 7
  * 
+ * Graph :
+ * https://github.com/er-knight/graph-series/blob/main/Graphs/Graph04.png
+ * 
  * Output :
  * 1 -> 2 
  * 2 -> 1 3 7 
