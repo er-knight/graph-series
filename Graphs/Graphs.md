@@ -17,3 +17,8 @@
     <code>Graph Coloring : Bipartite Graph</code> <br>
     <img src="Graph04.png" width="400">
 </p>
+
+<p align="center"> 
+    <code>Cycle Detection in Directed Graph</code> <br>
+    <img src="Graph05.png" width="400">
+</p>
