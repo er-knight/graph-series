@@ -1,9 +1,9 @@
-# C++ Executable
-a.out
+# C++ Executables
+*.out
 
 # VS Code's Settings
 .vscode/
 
-# Python's Compiled Bytecodes
+# Python Byte-compiled Files
 __pycache__/*
 *.py[cod]
