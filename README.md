@@ -23,3 +23,8 @@
 - [`Cycle Detection in Directed Graph using DFS`](https://youtu.be/uzVUw90ZFIg)  
     [`graph09.cpp`](c++/graph09.cpp) [`graph09.py`](python/graph09.py) 
 </b>
+
+<!-- 
+git rm -r --cached . && git add . && git commit -m "."
+g++ graph01.cpp && cat input.txt | ./a.out
+cat input.txt | python3 graph01.py -->
