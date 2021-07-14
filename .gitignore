@@ -5,3 +5,6 @@
 
 # VS Code's Settings
 .vscode/*
+
+# Python's Compiled Bytecodes
+__pycache__/*

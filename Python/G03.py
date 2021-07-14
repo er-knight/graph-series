@@ -1,4 +1,4 @@
-from collections import deque as queue
+from helper import queue
 from typing import List
 
 # Breadth First Search on Undirected Graph 
@@ -21,14 +21,15 @@ def bfs(n: int, adj_list: List[int]) -> List[int]:
     for i in range(n):
         if not visited[i]:
             q = queue()
-            q.append(i) # push
+            q.push(i)
             visited[i] = True
-            while q: # q not empty
-                node = q.popleft() # front
+            while not q.empty(): 
+                node = q.front()
+                q.pop()
                 bfs_traversal.append(node)
                 for k in adj_list[node]:
                     if not visited[k]:
-                        q.append(k)
+                        q.push(k)
                         visited[k] = True
 
     return bfs_traversal
