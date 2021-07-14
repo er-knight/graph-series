@@ -6,6 +6,7 @@
 
 # Python Byte-compiled Files
 __pycache__/*
+*.py[cod]
 
 # Graph Input
 input.txt
