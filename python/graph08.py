@@ -73,7 +73,7 @@ if __name__ == "__main__":
 # 6 7
 # 
 # Graph :
-# https://github.com/er-knight/graph-series/blob/main/Graphs/Graph04.png
+# https://github.com/er-knight/graph-series/blob/main/graphs/graph04.png
 # 
 # Output :
 # 1 -> 2 

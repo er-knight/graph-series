@@ -50,7 +50,7 @@ int main() {
  * 3 5
  * 
  * Graph :
- * https://github.com/er-knight/graph-series/blob/main/Graphs/Graph01.png
+ * https://github.com/er-knight/graph-series/blob/main/graphs/graph01.png
  * 
  * Output :
  * 1 → 2 3 5 

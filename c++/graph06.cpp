@@ -86,7 +86,7 @@ int main() {
  * 7 8
  * 
  * Graph :
- * https://github.com/er-knight/graph-series/blob/main/Graphs/Graph03.png
+ * https://github.com/er-knight/graph-series/blob/main/graphs/graph03.png
  * 
  * Output :
  * 1 -> 3 

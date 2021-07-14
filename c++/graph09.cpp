@@ -93,7 +93,7 @@ int main() {
  * 5 1
  * 
  * Graph : 
- * https://github.com/er-knight/graph-series/blob/main/Graphs/Graph05.png
+ * https://github.com/er-knight/graph-series/blob/main/graphs/graph05.png
  * 
  * Output :
  * 1 -> 2 3 4
