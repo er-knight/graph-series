@@ -4,7 +4,7 @@
 *.app
 
 # VS Code's Settings
-.vscode/*
+.vscode/
 
 # Python's Compiled Bytecodes
-__pycache__/*
+__pycache__/
