@@ -5,5 +5,5 @@ a.out
 .vscode/
 
 # Python's Compiled Bytecodes
-__pycache__/
+__pycache__/*
 *.py[cod]
