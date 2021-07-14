@@ -1,4 +1,4 @@
-from collections import deque as queue
+from helper import queue
 from typing import List
 
 # Graph Coloring using BFS (Bipartite Graph) 
@@ -24,17 +24,22 @@ from typing import List
 
 def is_bipartite(n: int, adj_list: List[int]) -> List[int]:
     color = [0 for i in range(n)] 
+
     for i in range(n):
         if not color[i]:
             q = queue()
-            q.append(i) # push
+            q.push(i) 
             color[i] = 1
-            while q: # q not empty
-                node = q.popleft() # front
+
+            while not q.empty(): 
+                node = q.front()
+                q.pop()
+
                 for k in adj_list[node]:
                     if not color[k]:
-                        q.append(k)
+                        q.push(k)
                         color[k] = -color[node]
+
                     elif color[k] == color[node]:
                         return False
 
@@ -51,7 +56,7 @@ if __name__ == "__main__":
         adj_list[v - 1].append(u - 1)
 
     for i in range(n):
-        print(f"{i + 1} -> ", end="")
+        print(f"{i + 1} → ", end="")
         for j in adj_list[i]:
             print(f"{j + 1} ", end="")
         print()
@@ -76,12 +81,12 @@ if __name__ == "__main__":
 # https://github.com/er-knight/graph-series/blob/main/graphs/graph04.png
 # 
 # Output :
-# 1 -> 2 
-# 2 -> 1 3 7 
-# 3 -> 2 4 
-# 4 -> 3 5 
-# 5 -> 4 6 8 
-# 6 -> 5 7 
-# 7 -> 2 6 
-# 8 -> 5 
+# 1 → 2 
+# 2 → 1 3 7 
+# 3 → 2 4 
+# 4 → 3 5 
+# 5 → 4 6 8 
+# 6 → 5 7 
+# 7 → 2 6 
+# 8 → 5 
 # Bipartite Graph

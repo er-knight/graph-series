@@ -1,4 +1,4 @@
-from collections import deque as queue
+from helper import queue
 from typing import List
 
 # Cycle Detection in Undirected Graph using BFS
@@ -17,17 +17,22 @@ from typing import List
 
 def is_cycle(n: int, adj_list: List[int]) -> List[int]:
     visited = [False for i in range(n)] 
+
     for i in range(n):
         if not visited[i]:
             q = queue()
-            q.append((i, -1)) # push
+            q.push((i, -1)) 
             visited[i] = True
-            while q: # q not empty
-                node, prev = q.popleft() # front
+            
+            while not q.empty(): 
+                node, prev = q.front() 
+                q.pop()
+                
                 for k in adj_list[node]:
                     if not visited[k]:
-                        q.append((k, node))
+                        q.push((k, node))
                         visited[k] = True
+                        
                     elif k != prev:
                         return True
 
@@ -44,7 +49,7 @@ if __name__ == "__main__":
         adj_list[v - 1].append(u - 1)
 
     for i in range(n):
-        print(f"{i + 1} -> ", end="")
+        print(f"{i + 1} → ", end="")
         for j in adj_list[i]:
             print(f"{j + 1} ", end="")
         print()
@@ -57,8 +62,8 @@ if __name__ == "__main__":
 # Input :
 # 8 7
 # 1 3
-# 3 4
 # 2 5
+# 3 4
 # 5 6
 # 5 8
 # 6 7
@@ -68,12 +73,12 @@ if __name__ == "__main__":
 # https://github.com/er-knight/graph-series/blob/main/graphs/graph03.png
 # 
 # Output :
-# 1 -> 3 
-# 2 -> 5 
-# 3 -> 1 4 
-# 4 -> 3 
-# 5 -> 2 6 8 
-# 6 -> 5 7 
-# 7 -> 6 8 
-# 8 -> 5 7 
+# 1 → 3 
+# 2 → 5 
+# 3 → 1 4 
+# 4 → 3 
+# 5 → 2 6 8 
+# 6 → 5 7 
+# 7 → 6 8 
+# 8 → 5 7 
 # Cycle Detected

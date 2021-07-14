@@ -48,7 +48,7 @@ if __name__ == "__main__":
         adj_list[v - 1].append(u - 1)
 
     for i in range(n):
-        print(f"{i + 1} -> ", end="")
+        print(f"{i + 1} → ", end="")
         for j in adj_list[i]:
             print(f"{j + 1} ", end="")
         print()
@@ -72,11 +72,11 @@ if __name__ == "__main__":
 # https://github.com/er-knight/graph-series/blob/main/graphs/graph02.png
 # 
 # Output :
-# 1 -> 2 
-# 2 -> 1 3 7 
-# 3 -> 2 5 
-# 4 -> 6 
-# 5 -> 3 7 
-# 6 -> 4 
-# 7 -> 2 5
+# 1 → 2 
+# 2 → 1 3 7 
+# 3 → 2 5 
+# 4 → 6 
+# 5 → 3 7 
+# 6 → 4 
+# 7 → 2 5 
 # BFS : 1 2 3 7 5 4 6 

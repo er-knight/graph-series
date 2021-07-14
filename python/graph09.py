@@ -1,4 +1,4 @@
-from collections import deque as stack
+from helper import stack
 from typing import List
 
 # Cycle Detection in Directed Graph using DFS
@@ -9,35 +9,35 @@ from typing import List
 # 
 # Time Complexity  : O(n)
 # 
-# Space Complexity : O(n)  +  O(n)   +   O(n)   ≈ O(n) 
-#                     ↑        ↑          ↑
-#                   stack   visited  dfs_visited  
+# Space Complexity : O(n)  +  O(n)  +  O(n)   ≈ O(n) 
+#                     ↑        ↑        ↑
+#                   stack   visited  on_stack  
 # 
 # Reference : https://youtu.be/uzVUw90ZFIg
 
 def is_cycle(n: int, adj_list: List[int]) -> List[int]:
-    visited     = [False for i in range(n)]
-    dfs_visited = [False for i in range(n)]
+    visited  = [False for i in range(n)]
+    on_stack = [False for i in range(n)]
 
     for i in range(n):
         if not visited[i]:
             s = stack()
-            s.append(i) # push
+            s.push(i)
 
-            while s: # stack is not empty
-                node = s[-1] # top
+            while not s.empty():
+                node = s.top()
 
                 if not visited[node]:
-                    visited[node] = True 
-                    dfs_visited[node] = True
+                    visited[node]  = True 
+                    on_stack[node] = True
                 else:
-                    dfs_visited[node] = False
-                    _ = s.pop() # pop
+                    on_stack[node] = False
+                    s.pop()
 
                 for k in adj_list[node]:
                     if not visited[k]:
-                        s.append(k)
-                    elif dfs_visited[k]:
+                        s.push(k)
+                    elif on_stack[k]:
                         return True
 
     return False
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         adj_list[u - 1].append(v - 1)
 
     for i in range(n):
-        print(f"{i + 1} -> ", end="")
+        print(f"{i + 1} → ", end="")
         for j in adj_list[i]:
             print(f"{j + 1} ", end="")
         print()
@@ -76,10 +76,10 @@ if __name__ == "__main__":
 # https://github.com/er-knight/graph-series/blob/main/graphs/graph05.png
 # 
 # Output :
-# 1 -> 2 3 4
-# 2 -> 5 
-# 3 -> 6 
-# 4 -> 6 
-# 5 -> 1 
-# 6 ->  
+# 1 → 2 3 4 
+# 2 → 5 
+# 3 → 6 
+# 4 → 6 
+# 5 → 1 
+# 6 → 
 # Cycle Detected
