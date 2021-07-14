@@ -1,4 +1,4 @@
-from collections import deque as stack
+from helper import stack
 from typing import List
 
 # Depth First Search on Undirected Graph 
@@ -21,14 +21,15 @@ def dfs(n: int, adj_list: List[int]) -> List[int]:
     for i in range(n):
         if not visited[i]:
             s = stack()
-            s.append(i) # push
+            s.push(i)
             visited[i] = True
-            while s: # q not empty
-                node = s.pop() # top
+            while not s.empty(): 
+                node = s.top()
+                s.pop()
                 dfs_traversal.append(node)
                 for k in adj_list[node]:
                     if not visited[k]:
-                        s.append(k)
+                        s.push(k)
                         visited[k] = True
 
     return dfs_traversal
